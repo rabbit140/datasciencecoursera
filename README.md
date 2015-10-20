@@ -113,4 +113,4 @@ Data
 |             subject_id            |                             |
 |              activity             |                             |
 
-**To read morea about data transformations read the codebook**
+**To read morea about data transformations please refer to the codebook**
