@@ -110,7 +110,7 @@ Data
 |     BodyGyroscopeMagnitudestd     |    fBodyBodyGyroMag.std..   |
 |   BodyGyroscopeJerkMagnitudemean  | fBodyBodyGyroJerkMag.mean.. |
 |   BodyGyroscopeJerkMagnitudestd   |  fBodyBodyGyroJerkMag.std.. |
-|             subject_id            |                             |
-|              activity             |                             |
+|             subject_id            |           N/A               |
+|              activity             |           N/A               |
 
 **To read morea about data transformations please refer to the codebook**
