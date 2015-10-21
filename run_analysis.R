@@ -7,7 +7,7 @@ if(sum(package_names == c("data.table")) == 0) {
 
 library(data.table)
 
-#Gets working directory and set appropriate file paths.
+#Gets working directory and set appropriate file paths
 filePath <- getwd()
 filePath <- paste(filePath, "/UCI HAR Dataset", sep = "")
 testPath <- paste(filePath, "/test", sep = "")
@@ -15,16 +15,16 @@ trainPath <- paste(filePath, "/train", sep = "")
 
 ##DATA PREPARATION
 
-#Extracts features names and creates "X_test" and "X_train" datasets.
+#Extracts features names and creates "X_test" and "X_train" datasets
 features <- read.table(paste(filePath, "/features.txt", sep = ""))
 X_test <- read.table(paste(testPath, "/X_test.txt", sep = ""), col.names = features[,2])
 X_train <- read.table(paste(trainPath, "/X_train.txt", sep = ""), col.names = features[,2])
 
 
-#1. Merges the training and the test sets to create one data set.
+#1. Merges the training and the test sets to create one data set
 X <- rbind(X_test, X_train)
 
-#2. Extracts only the measurements on the mean and standard deviation (string "-mean()" or "-std()") for each measurement. 
+#2. Extracts only the measurements on the mean and standard deviation (string "-mean()" or "-std()") for each measurement
 mean_std_rows <- features[grep("(-mean\\()|(-std\\()", features[,2]),]
 X_mean_std <- X[,mean_std_rows[,1]]
 
@@ -41,7 +41,7 @@ subject_bind <- rbind(subject_test, subject_train)
 y <- as.factor(y$V1)
 y <- factor(y, levels = c(1,2,3,4,5,6), labels = c("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"))
 
-#4. Appropriately labels the data set with descriptive variable names.
+#4. Appropriately labels the data set with descriptive variable names
 X_mean_std_labeled <- cbind(X_mean_std, y)
 X_mean_std_labeled <- cbind(X_mean_std_labeled, subject_bind)
 colnames(X_mean_std_labeled)[68] <- c("ssubject_id")
@@ -52,7 +52,7 @@ colnames(X_mean_std_labeled) <- gsub("Gyro", "Gyroscope", colnames(X_mean_std_la
 colnames(X_mean_std_labeled) <- gsub("Mag", "Magnitude", colnames(X_mean_std_labeled))
 colnames(X_mean_std_labeled) <- gsub("BodyBody", "Body", colnames(X_mean_std_labeled))
 
-#5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 tidy_data <- data.table(X_mean_std_labeled)
 tidy_data$subject_id <- as.factor(tidy_data$subject_id)
 
