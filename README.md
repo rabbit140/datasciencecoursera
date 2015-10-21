@@ -30,9 +30,13 @@ The output file is created in the working directory and is called 'tidy.txt'.
 
 Data
 --------
-The data which 'run_analysis.R' operates on is available under https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
 
-To read more about data refer to codebook.
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+Data for the project was obtained from the follwoing link:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 
 
