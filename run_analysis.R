@@ -1,4 +1,12 @@
+#Cheks whether the package 'data.table' is already installed
+packages <- installed.packages()
+package_names <- packages[,1]
+if(sum(package_names == c("data.table")) == 0) {
+      install.packages("data.table")
+}
+
 library(data.table)
+
 #Gets working directory and set appropriate file paths.
 filePath <- getwd()
 filePath <- paste(filePath, "/UCI HAR Dataset", sep = "")
@@ -49,11 +57,18 @@ tidy_data <- data.table(X_mean_std_labeled)
 tidy_data$subject_id <- as.factor(tidy_data$subject_id)
 
 #Computes mean by subject id and activity
-tidy_aggregated <- aggregate(tidy_data, by = list(tidy_data$subject_id, tidy_data$activity), mean)
+tidy_aggregated <- suppressWarnings(aggregate(tidy_data, by = list(tidy_data$subject_id, tidy_data$activity), mean))
 colnames(tidy_aggregated)[1:2] <- c("subject_id", "activity")
 
-#Removes unecessary columns
+#Removes unecessary columns and makes column names more readable
 tidy_aggregated <- tidy_aggregated[,-c(69:70)]
+colnames(tidy_aggregated) <- gsub("1", "", colnames(tidy_aggregated))
+colnames(tidy_aggregated) <- gsub("\\.","",colnames(tidy_aggregated))
+colnames(tidy_aggregated) <- gsub("1", "", colnames(tidy_aggregated))
+colnames(tidy_aggregated) <- gsub("\\.", "", colnames(tidy_aggregated))
+colnames(tidy_aggregated) <- gsub("mean", "Mean", colnames(tidy_aggregated))
+colnames(tidy_aggregated) <- gsub("std", "Std", colnames(tidy_aggregated))
+
 
 #Writes the result to a .txt file in the working directory
 write.table(tidy_aggregated, file = "tidy.txt", row.names = FALSE)
