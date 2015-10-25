@@ -93,8 +93,6 @@ Variables
 ##### Variable names
 
 
-**Left column - in dataset, right clumn - original:**
-
 |              Dataset              |           Original          |
 |:---------------------------------:|:---------------------------:|
 |       BodyAccelerationMeanX       |      tBodyAcc.mean...X      |
