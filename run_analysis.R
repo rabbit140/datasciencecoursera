@@ -5,7 +5,7 @@ if(sum(package_names == c("data.table")) == 0) {
       install.packages("data.table")
 }
 
-library(data.table)
+suppressMessages(library(data.table))
 
 #Gets working directory and set appropriate file paths
 filePath <- getwd()
