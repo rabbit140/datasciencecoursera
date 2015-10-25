@@ -87,7 +87,10 @@ Cleaning of the data
 Variables
 =========
 
-#### Variable names
+##### Dataset dimensions
+180 rows, 68 columns
+
+##### Variable names
 
 
 **Left column - in dataset, right clumn - original:**
