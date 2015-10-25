@@ -1,11 +1,15 @@
 #Cheks whether the package 'data.table' is already installed
 packages <- installed.packages()
+
 package_names <- packages[,1]
 if(sum(package_names == c("data.table")) == 0) {
       install.packages("data.table")
+}     else if(sum(package_names == c("pipeR")) == 0) {
+      install.packages("pipeR")
 }
 
 suppressMessages(library(data.table))
+suppressMessages(library(pipeR))
 
 #Gets working directory and set appropriate file paths
 filePath <- getwd()
