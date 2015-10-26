@@ -67,7 +67,7 @@ Cleaning of the data
 
 #####Data manipulation
 
-3. Extracts only the measurements on the mean and standard deviation (string "-mean()" or "-std()") for each measurement
+3. Extract only the measurements on the mean and standard deviation (string "-mean()" or "-std()") for each measurement
 4. Merge "y_test" and "y_train"
 5. Use descriptive activity names to name the activities in the data set
 6. Appropriately labels the data set with descriptive variable names
@@ -75,12 +75,12 @@ Cleaning of the data
 
 #####Data summary
 
-8. Computes mean by subject id and activity
-9. Removes unecessary columns and makes column names more readable
+8. Compute mean by subject id and activity
+9. Remove unecessary columns and makes column names more readable
 
 #####Data write
 
-10. Writes the result to a "tidy.txt" file in the user's working directory
+10. Write the result to a "tidy.txt" file in the user's working directory
 
 Variables
 =========
