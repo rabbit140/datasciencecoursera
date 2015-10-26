@@ -20,7 +20,6 @@ filePath <- paste(filePath, "/UCI HAR Dataset", sep = "")
 testPath <- paste(filePath, "/test", sep = "")
 trainPath <- paste(filePath, "/train", sep = "")
 
-##DATA PREPARATION
 
 #Extracts features names and creates "X_test" and "X_train" datasets
 features <- read.table(paste(filePath, "/features.txt", sep = ""))
