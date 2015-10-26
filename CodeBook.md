@@ -54,10 +54,8 @@ Creating the tidy datafile
 Guide to create the tidy data file
 ----------------------------------
 
-1. Download the data (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
-2. Unzip the archive into the working directory of RStudio
-3. Source and run the "run_analysis.R" file
-4. View the "tidy.txt" file that was created in your working directory
+1. Source and run the "run_analysis.R" file (necessary data is downloaded automatically)
+2. View the "tidy.txt" file that was created in your working directory
 
 Cleaning of the data
 --------------------
