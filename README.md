@@ -15,8 +15,6 @@ The **'run_analysis.R** script does the following:
 
 > **Note:**
 
-> * The unzipped folder with data ('UCI HAR Dataset') should be present in the working directory as given by getwd() function
-
 > * Only variables containing 'mean()' and 'std()' are used (according to the following regex: "(-mean\\()|(-std\\()")
 
 ####  Running the script
